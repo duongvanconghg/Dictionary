@@ -1,4 +1,6 @@
-abc	def
-hihi	duongdeptrai
-ihih	ahah
-xyz	vqp
+Multiplication    Phép nhân
+Numeric    Số học, thuộc về số học
+Operation    Thao tác
+Numeric    Số học, thuộc về số học
+Operation    Thao tác
+Output    Ra, đưa ra
