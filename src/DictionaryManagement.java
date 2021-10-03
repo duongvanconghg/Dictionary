@@ -1,5 +1,7 @@
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class DictionaryManagement {
@@ -21,6 +23,11 @@ public class DictionaryManagement {
         new_word.setWord_target(new_target);
         new_word.setWord_explain(new_explain);
         my_dictionary.set_my_word(new_word);
+        //my_dictionary.insertFromFile01();
+    }
+
+    public void insertF() {
+        my_dictionary.insertFromFile01();
     }
 
     public void  insertFromFile() throws FileNotFoundException {
@@ -28,7 +35,7 @@ public class DictionaryManagement {
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-            String[] data = line.split("\\s");
+            String[] data = line.split("\t");
             String new_target = data[0];
             String new_explain = data[1];
             Word new_word = new Word();
@@ -38,6 +45,7 @@ public class DictionaryManagement {
         }
         showAllWords();
     }
+
 
     public String concatALine(int no, String tg, String ex) {
         String pLine;
@@ -95,11 +103,11 @@ public class DictionaryManagement {
         String s = scanner.nextLine();
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
-            String[] data = line.split("");
-            String el = data[0];
-            String vn = data[1];
-            if (el.contains(s)) {
-                System.out.format("%-25s %-25s\n", el, vn);
+            String[] data = line.split("\t");
+            String new_target = data[0];
+            String new_explain = data[1];
+            if (new_target.contains(s)) {
+                System.out.format("%-25s %-25s\n", new_target, new_explain);
             }
 
         }

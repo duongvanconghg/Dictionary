@@ -33,5 +33,7 @@ public class Word {
         this.word_explain = word.getWord_explain();
     }
 
-
+    public String toString() {
+        return word_target + "\t" +word_explain;
+    }
 }
